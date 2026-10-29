@@ -1,0 +1,20 @@
+App\Entity\Measurement:
+    properties:
+        location:
+            - NotNull: { groups: [create, edit] }
+        date:
+            - NotNull: { groups: [create, edit] }
+            - GreaterThan: { value: today, groups: [create] }
+            - GreaterThanOrEqual: { value: today, groups: [edit] }
+        celsius:
+            - NotBlank: { groups: [create, edit] }
+            - Range: { min: -50, max: 50, groups: [create, edit] }
+        humidity:
+            - NotNull: { groups: [create, edit] }
+            - Range: { min: 0, max: 100, groups: [create, edit] }
+        pressure:
+            - NotNull: { groups: [create, edit] }
+            - Range: { min: 800, max: 1100, groups: [create, edit] }
+        windSpeed:
+            - NotBlank: { groups: [create, edit] }
+            - Range: { min: 0, max: 100, groups: [create, edit] }

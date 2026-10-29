@@ -55,7 +55,7 @@ class Measurement
         return $this->date;
     }
 
-    public function setDate(\DateTime $date): static
+    public function setDate(?\DateTime $date): static
     {
         $this->date = $date;
 
@@ -67,7 +67,7 @@ class Measurement
         return $this->celsius;
     }
 
-    public function setCelsius(string $celsius): static
+    public function setCelsius(?string $celsius): static
     {
         $this->celsius = $celsius;
 
@@ -79,7 +79,7 @@ class Measurement
         return $this->humidity;
     }
 
-    public function setHumidity(int $humidity): static
+    public function setHumidity(?int $humidity): static
     {
         $this->humidity = $humidity;
 
@@ -91,7 +91,7 @@ class Measurement
         return $this->pressure;
     }
 
-    public function setPressure(int $pressure): static
+    public function setPressure(?int $pressure): static
     {
         $this->pressure = $pressure;
 
@@ -103,7 +103,7 @@ class Measurement
         return $this->windSpeed;
     }
 
-    public function setWindSpeed(string $windSpeed): static
+    public function setWindSpeed(?string $windSpeed): static
     {
         $this->windSpeed = $windSpeed;
 

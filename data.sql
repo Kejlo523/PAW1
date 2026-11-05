@@ -11,3 +11,7 @@ INSERT INTO measurement (location_id, date, celsius, humidity, pressure, wind_sp
 (2, date('now', 'localtime', '+1 day'), 12, 72, 1015, 2.7),
 (2, date('now', 'localtime', '+2 days'), 13, 68, 1017, 2.1),
 (2, date('now', 'localtime', '+3 days'), 11, 81, 1012, 3.4);
+
+INSERT INTO user (username, roles, password) VALUES
+('admin', '["ROLE_ADMIN"]', '$2y$13$AzHyeVvFC3RKVVH.OAsIO.EjWMDFLHYK1lg0ZZtyAlOYifRRQQhFS'),
+('viewer', '["ROLE_USER"]', '$2y$13$MH88hLUGauHYZis7UOqjDutajfzMgiy7DwcxW.x.ujkKYnsVtWqpm');

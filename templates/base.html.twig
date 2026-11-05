@@ -27,9 +27,18 @@
     <body>
         <nav class="navbar bg-body-tertiary border-bottom mb-3">
             <div class="container-fluid justify-content-start gap-3">
-                <a class="navbar-brand" href="{{ path('app_location_index') }}">Weather</a>
-                <a class="nav-link" href="{{ path('app_location_index') }}">Locations</a>
-                <a class="nav-link" href="{{ path('app_measurement_index') }}">Measurements</a>
+                <span class="navbar-brand">Weather</span>
+                {% if is_granted('ROLE_LOCATION_INDEX') %}
+                    <a class="nav-link" href="{{ path('app_location_index') }}">Locations</a>
+                {% endif %}
+                {% if is_granted('ROLE_MEASUREMENT_INDEX') %}
+                    <a class="nav-link" href="{{ path('app_measurement_index') }}">Measurements</a>
+                {% endif %}
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <a class="nav-link" href="{{ path('app_logout', {'_csrf_token': csrf_token('logout')}) }}">Logout</a>
+                {% else %}
+                    <a class="nav-link" href="{{ path('app_login') }}">Login</a>
+                {% endif %}
             </div>
         </nav>
         <div class="container-fluid px-3 pb-5">
